@@ -37,7 +37,12 @@ export async function POST(request: Request) {
     if (error) {
       console.error('Error al insertar en Supabase:', error);
       return NextResponse.json(
-        { error: 'Error al procesar la inscripción', details: error.message },
+        {
+          error: 'Error al procesar la inscripción',
+          details: error.message,
+          code: error.code,
+          hint: error.hint
+        },
         { status: 500 }
       );
     }
