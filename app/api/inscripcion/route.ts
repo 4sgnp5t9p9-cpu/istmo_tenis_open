@@ -1,13 +1,20 @@
 import { createClient } from '@supabase/supabase-js';
 import { NextResponse } from 'next/server';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-
-const supabase = createClient(supabaseUrl, supabaseKey);
-
 export async function POST(request: Request) {
   try {
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+    if (!supabaseUrl || !supabaseKey) {
+      console.error('Faltan variables de entorno de Supabase');
+      return NextResponse.json(
+        { error: 'Configuración del servidor incompleta' },
+        { status: 500 }
+      );
+    }
+
+    const supabase = createClient(supabaseUrl, supabaseKey);
     const body = await request.json();
 
     const { data, error } = await supabase
@@ -30,7 +37,7 @@ export async function POST(request: Request) {
     if (error) {
       console.error('Error al insertar en Supabase:', error);
       return NextResponse.json(
-        { error: 'Error al procesar la inscripción' },
+        { error: 'Error al procesar la inscripción', details: error.message },
         { status: 500 }
       );
     }
@@ -39,7 +46,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('Error en el servidor:', error);
     return NextResponse.json(
-      { error: 'Error interno del servidor' },
+      { error: 'Error interno del servidor', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
     );
   }
