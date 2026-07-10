@@ -141,17 +141,17 @@ export default function Home() {
 
         {/* Hero Content */}
         <div className="relative z-10 container mx-auto px-4 py-16 text-center">
-          {/* Tennis Ball Accent */}
-          <div className="inline-block mb-6">
-            <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-[#CCFF00] to-[#a8d400] rounded-full shadow-2xl shadow-[#CCFF00]/50 animate-pulse"></div>
+          {/* Logo */}
+          <div className="inline-block mb-8">
+            <Image
+              src="/logo.png"
+              alt="Istmo Tenis Open"
+              width={600}
+              height={200}
+              className="w-auto h-32 sm:h-40 md:h-48 lg:h-56 drop-shadow-2xl"
+              priority
+            />
           </div>
-
-          {/* Main Title */}
-          <h1 className="font-bebas text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white mb-4 tracking-wider leading-none drop-shadow-2xl">
-            ISTMO TENIS
-            <br />
-            <span className="text-[#CCFF00] drop-shadow-[0_0_30px_rgba(204,255,0,0.8)]">OPEN</span>
-          </h1>
 
           {/* Subtitle */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8">
