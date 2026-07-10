@@ -140,34 +140,34 @@ export default function Home() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 container mx-auto px-4 py-16 text-center">
+        <div className="relative z-10 container mx-auto px-4 py-16 md:py-24 text-center">
           {/* Logo */}
-          <div className="inline-block mb-8">
+          <div className="inline-block mb-12">
             <Image
               src="/logo.png"
               alt="Istmo Tenis Open"
-              width={600}
-              height={200}
-              className="w-auto h-32 sm:h-40 md:h-48 lg:h-56 drop-shadow-2xl"
+              width={800}
+              height={800}
+              className="w-72 h-auto sm:w-96 md:w-[500px] lg:w-[600px] xl:w-[700px] drop-shadow-[0_20px_60px_rgba(204,255,0,0.4)] hover:drop-shadow-[0_25px_70px_rgba(204,255,0,0.6)] transition-all duration-300"
               priority
             />
           </div>
 
           {/* Subtitle */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8">
-            <p className="font-bebas text-2xl md:text-3xl text-[#00d4ff] tracking-wider">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-10">
+            <p className="font-bebas text-4xl md:text-5xl lg:text-6xl text-[#CCFF00] tracking-wider drop-shadow-[0_0_20px_rgba(204,255,0,0.8)]">
               PANAMÁ
             </p>
-            <span className="hidden sm:block w-2 h-2 bg-[#CCFF00] rounded-full"></span>
-            <p className="font-bebas text-xl md:text-2xl text-white/90 tracking-wide">
+            <span className="hidden sm:block w-3 h-3 bg-[#00d4ff] rounded-full shadow-lg shadow-[#00d4ff]/50"></span>
+            <p className="font-bebas text-2xl md:text-3xl lg:text-4xl text-white/95 tracking-wide drop-shadow-lg">
               7 AGOSTO — 30 SEPTIEMBRE
             </p>
           </div>
 
           {/* Price Badge */}
           <div className="inline-block">
-            <div className="bg-gradient-to-r from-[#CCFF00] via-[#b8e600] to-[#CCFF00] px-10 py-4 rounded-full shadow-2xl shadow-[#CCFF00]/50 transform hover:scale-105 transition-transform">
-              <p className="font-bebas text-4xl md:text-5xl text-[#0a1628] tracking-wider">
+            <div className="bg-gradient-to-r from-[#CCFF00] via-[#b8e600] to-[#CCFF00] px-12 py-5 md:px-16 md:py-6 rounded-full shadow-2xl shadow-[#CCFF00]/60 transform hover:scale-105 transition-all animate-pulse hover:animate-none">
+              <p className="font-bebas text-5xl md:text-6xl lg:text-7xl text-[#0a1628] tracking-wider">
                 INSCRIPCIÓN $55
               </p>
             </div>
